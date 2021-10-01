@@ -1,0 +1,17 @@
+.container {
+    width: 1000px;
+    margin: auto;
+  }
+  .container__theme-dark{
+    background-color: midnightblue;
+  }
+  .header {
+    background-color: rgb(24, 172, 140);
+    margin: auto;
+    color: #fff;
+    padding: 8px;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
