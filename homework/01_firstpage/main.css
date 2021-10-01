@@ -1,6 +1,7 @@
 .container {
     width: 1000px;
     margin: auto;
+   
   }
   .container__theme-dark{
     background-color: midnightblue;
@@ -13,7 +14,8 @@
   }
   .content {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 24% 75%;
+    grid-gap: 0.7rem;
   }
   .content-right {
     background-color: rgba(238, 236, 236, 0.945);
@@ -23,15 +25,14 @@
   .content-right__namefish{
     padding-left: 20px;
   }
-  .content-left {
-    margin: 10px;
-  }
+ 
   .content-left__fish {
     line-height: 0.5;
   }
   .content-left__mainfish {
     display: grid;
-    grid-template-columns: 51% 50%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
   }
   .content-left__holdfish,
   .content-left__livefish {
@@ -40,12 +41,10 @@
     padding-left: 12px;
     line-height: 0;
   }
-  .content-left__livefish {
-    margin-left: 10px;
-  }
+  
   .content-left__pop-fish {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 92%;
     grid-gap: 8px;
   }
