@@ -1,0 +1,54 @@
+/* медиа правила */
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1200px) and (max-width: 1025px) {
+  .pop-fish {
+    display: grid; 
+    grid-template-columns: 35% 65%;
+  }
+}
+@media screen and (max-width: 1024px) and (max-width: 769px) {
+  .pop-fish {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+}
+@media screen and (max-width: 769px) and (max-width: 650px) {
+  .content-right {
+    display: none;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
+
+@media screen and (max-width: 649px) and (max-width: 481px) {
+  .header {
+    text-align: center;
+  }
+  .pop-fish {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 0.4rem;
+  }
+  .content-left__mainfish {
+    grid-template-columns: 100%;
+  }
+}
+@media screen and (max-width: 480px) and (max-width: 400px) {
+    .content-left__pop-fish {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 30%;
+        grid-gap: 0.3rem;
+      }
+
+}
+@media screen and (max-width: 399px) and (max-width: 321px) {
+ 
+}
+@media screen and (max-width: 320px) {
+}
