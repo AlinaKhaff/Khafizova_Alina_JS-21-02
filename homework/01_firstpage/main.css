@@ -9,17 +9,13 @@
     background-color: black;
     color: #fff;
 }
-.header{
-    display: grid;
-    grid-template-columns: 90% 10%;
-}
+
 .header {
     background-color: rgb(24, 172, 140);
     color: #fff;
     padding: 0.5rem;
 }
-
-.header__theme-dark {
+.header__theme-dark{
     background-color: blue;
 }
 
@@ -35,10 +31,9 @@
     padding: 0.5rem;
 }
 
-.content-right__theme-dark {
+.content-right__theme-dark{
     background-color: black;
 }
-
 .content-right__namefish {
     padding-left: 1.25rem;
 }
@@ -61,19 +56,8 @@
     line-height: 0;
 }
 
-.content-left__holdfish:hover {
-    transition: 1s;
-    background-color: cyan;
-}
-
-.content-left__livefish:hover {
-    transition: 1s;
-    background-color: cyan;
-}
-
-
 .content-left__holdfish__theme-dark,
-.content-left__livefish__theme-dark {
+.content-left__livefish__theme-dark{
     background-color: cyan;
 }
 
@@ -91,12 +75,7 @@
     padding: 0.625rem;
 }
 
-.pop-fish:hover {
-    background-color: cyan;
-    transition: 1s;
-}
-
-.pop-fish__theme-dark {
+.pop-fish__theme-dark{
     background-color: cyan;
 }
 
@@ -114,38 +93,7 @@
     margin-top: 0.5rem;
 }
 
-.footer-fish__theme-dark {
+.footer-fish__theme-dark{
     color: #fff;
     background-color: black;
-}
-
-.loader {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: conic-gradient(lightgray, transparent);
-    animation: rotating 1s linear infinite;
-}
-
-.loader::before {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    top: 10px;
-    left: 10px;
-    border-radius: 50%;
-    background: white;
-}
-
-@keyframes rotating {
-    from {
-        transform: rotate(360deg);
-
-    }
-
-    to {
-        transform: rotate(0deg);
-    }
 }
