@@ -1,68 +1,65 @@
 .container {
     width: 1000px;
     margin: auto;
-   
-  }
-  .container__theme-dark{
+}
+.container__theme-dark {
     background-color: midnightblue;
-  }
-  .header {
+}
+.header {
     background-color: rgb(24, 172, 140);
     margin: auto;
     color: #fff;
     padding: 8px;
-  }
-  .content {
+}
+.content {
     display: grid;
     grid-template-columns: 24% 75%;
     grid-gap: 0.7rem;
-  }
-  .content-right {
+}
+.content-right {
     background-color: rgba(238, 236, 236, 0.945);
     height: 520px;
     padding: 8px;
-  }
-  .content-right__namefish{
+}
+.content-right__namefish {
     padding-left: 20px;
-  }
- 
-  .content-left__fish {
+}
+.content-left__fish {
     line-height: 0.5;
-  }
-  .content-left__mainfish {
+}
+.content-left__mainfish {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.5rem;
-  }
-  .content-left__holdfish,
-  .content-left__livefish {
+}
+.content-left__holdfish,
+.content-left__livefish {
     background-color: rgba(238, 236, 236, 0.945);
     padding-top: 16px;
     padding-left: 12px;
     line-height: 0;
-  }
-  
-  .content-left__pop-fish {
+}
+.content-left__pop-fish {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 92%;
     grid-gap: 8px;
-  }
-  .pop-fish {
+}
+.pop-fish {
     display: grid;
     grid-template-columns: 25% 75%;
     background-color: rgba(238, 236, 236, 0.945);
     padding: 10px;
-  }
-  .pop-fish__button {
+}
+.pop-fish__button {
     margin-top: 14px;
-    background-color:gray ;
+    background-color: gray;
     border: none;
-  }
-  .footer-fish {
+}
+.footer-fish {
     display: flex;
     background-color: rgba(238, 236, 236, 0.945);
     padding: 8px;
     justify-content: space-between;
     margin-top: 8px;
-  }
+}
