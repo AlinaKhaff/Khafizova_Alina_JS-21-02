@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./task-8.js"></script>
+</head>
+
+<body>
+    <div class="block08">
+        <div class="container ">
+            <div class="block08__inner">
+                <div class="block08__feedback" id="block08-form">
+                    <form id="feedback-form" class="window-form">
+
+                        <div class="st-input1 st-input1_focused st-input1_error">
+                            <p class="st-input1__label">Полное имя</p>
+                            <input id="nameInput" type="text" name="name" class="st-input1__input required" value="">
+                            <p class="st-input1__error-msg">Error message</p>
+                        </div>
+                        <div class="st-input1 st-input1_focused st-input1_error">
+                            <p class="st-input1__label">Введите номер телефона</p>
+                            <input id="phoneInput" type="text" name="phone" class="st-input1__input required" value="">
+                            <p class="st-input1__error-msg">Error message</p>
+                        </div>
+                        <div class="input-wrap">
+                            <button id="submit-review-button">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="button_color">
+        <div class="col-1">
+            <div class="button_color_button">
+                <button type="button" class="button button_color_green" id="btn-to-green" onclick="setColor('green', 'white')">Зеленый</button>
+                <button type="button" class="button button_color_yellow" id="btn-to-yellow" onclick="setColor('yellow', 'black')">Желтый</button>
+                <button type="button" class="button button_color_blue" id="btn-to-blue" onclick="setColor('blue', 'green')">Голубой</button>
+            </div>
+        </div>
+    </div>
+    <table class="table" id='myTable'>
+        <thead class="table_str1 table_str1_color_yellow">
+            <tr>
+                <th>Полное имя</th>
+                <th>Номер телефона</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table_str2 table_str2_color_yellow">
+            <tr>
+                <td>Полное имя</td>
+                <td>Номер телефона</td>
+                <td>
+                    <a href="#" class="table__delete">Удалить</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+</body>
+
+</html>

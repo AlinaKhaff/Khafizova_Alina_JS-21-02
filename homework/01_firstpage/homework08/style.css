@@ -1,0 +1,93 @@
+.container {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  padding: 0;
+}
+
+.st-input1 {
+  position: relative;
+  border-radius: 0.31rem;
+  max-width: 100%;
+  transition: 0.2s;
+  margin-top: 1rem;
+}
+
+.st-input1__input {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.7rem;
+  width: 96%;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #dedede;
+  border: 1px solid #dedede;
+}
+
+.st-input1__input:webkit-autofill {
+  box-shadow: inset 0 0 0 2.5rem #dedede !important;
+}
+
+.st-input1__label {
+  position: absolute;
+  /* left: 0.85rem;
+    top: 2.5rem;*/
+  z-index: 1;
+  transition: 0.2s;
+  font-size: 0.75rem;
+  color: #a1a1a1;
+  /* top: 0.87rem; */
+  left: 1rem;
+}
+
+.st-input1:hover,
+.st-input1_focused {
+  background: #ffffff;
+  box-shadow: 0 0 0 0.31rem rgba(170, 243, 77, 0.52);
+}
+
+.st-input1_focused .st-input1__label {
+  top: -1.3rem;
+  /*left: 0.87rem;*/
+  background: #fff;
+  /* padding: 0 0.43rem;*/
+  color: #333333;
+}
+
+.st-input1_error {
+  box-shadow: 0 0 0 0.25rem rgb(220 60 16 / 50%);
+}
+
+.st-input1__error-msg {
+  font-size: 0.55rem;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0.75rem;
+  color: #dc3c10;
+}
+
+.st-input1_focused,
+.st-input1__input {
+  border: 1px solid #c4c4c4;
+}
+
+.input-wrap {
+  margin: 1rem;
+}
+.button_color_green {
+  background-color: green;
+}
+.button_color_yellow {
+  background-color: yellow;
+}
+.button_color_blue {
+  background-color: blue;
+}
+
+.table{
+    border: 1px solid;
+    width: 100%;
+    margin-top: 1rem;
+}
+.table_str1{
+    background-color: #a1a1a1;
+}
