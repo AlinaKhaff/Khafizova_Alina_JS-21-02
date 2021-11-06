@@ -1,0 +1,44 @@
+.pop-fish {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    background-color: rgba(238, 236, 236, 0.945);
+    padding: 0.625rem;
+}
+
+
+
+.pop-fish__button {
+    margin-top: 0.875rem;
+    background-color: gray;
+    border: none;
+}
+
+.content-left__fish {
+    line-height: 0.5;
+}
+
+.content-left__mainfish {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+}
+
+.content-left__holdfish,
+.content-left__livefish {
+    background-color: rgba(238, 236, 236, 0.945);
+    padding-top: 1rem;
+    padding-left: 0.75rem;
+    line-height: 0;
+}
+
+.content-left__holdfish__theme-dark,
+.content-left__livefish__theme-dark{
+    background-color: cyan;
+}
+
+.content-left__pop-fish {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 92%;
+    grid-gap: 0.5rem;
+}
