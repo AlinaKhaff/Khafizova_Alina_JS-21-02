@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.main {
+    padding: 10px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+.form__file-input-wrapper {
+   
+    display: flex;
+    position: relative;
+}
+
+.form__file-input {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.form__file-input-btn, 
+.form__file-name {
+    padding: 10px 15px;
+}
+
+.form__file-input-btn {
+    display: block;
+    background-color: blue;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.form__file-name {
+    display: block;
+    background-color: coral;
+}
+
+.form__file-name_hide{
+    display: none;
+}
+
+.form__input-text {
+    color: #FFF;
+    font-size: 15px;
+   
+}
+
+.form__button {
+    border: none;
+    background-color: red;
+    padding: 10px 15px;
+    color: #FFF;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.col {
+    flex: 0 1 calc(25% - 8px);
+}
+
+.image-card {
+    width: 100%;
+    background-color: violet;
+    padding: 10px;
+}
+
+.image-card__title {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.image-card__body {
+    width: 100%;
+    height: 180px;
+}
+
+.image-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
