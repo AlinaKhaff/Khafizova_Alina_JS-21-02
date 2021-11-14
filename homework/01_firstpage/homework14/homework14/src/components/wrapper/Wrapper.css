@@ -1,0 +1,13 @@
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+  }
+  .wrapper_theme_dark {
+    background-color: black;
+  }
+  .wrapper__container {
+    width: 930px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
