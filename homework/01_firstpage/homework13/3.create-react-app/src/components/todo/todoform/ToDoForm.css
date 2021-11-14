@@ -1,0 +1,31 @@
+.todo-form {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .todo-form__field {
+    width: 100%;
+    display: flex;
+  }
+  .todo-form__input {
+    width: 80%;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 24px;
+    color: #fff;
+    margin-right: 10px;
+  }
+  .todo-form__input:focus {
+    outline: 2px solid #fff;
+  }
+  .todo-form__button {
+    width: 20%;
+    border-radius: 7px;
+    border: none;
+    background-color: red;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease;
+  }
+  
