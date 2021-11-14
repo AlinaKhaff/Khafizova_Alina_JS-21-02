@@ -1,0 +1,19 @@
+.tooltip {
+    position: relative;
+    width: 100%;
+  }
+  
+  .tooltip__info {
+    position: absolute;
+    font-weight: 600;
+    top: -30px;
+    color: #6b7280;
+    background-color: white;
+    border: 1px solid #c4c4c4;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .tooltip__info_theme_dark {
+    background-color: #c4c4c4;
+    color: #fff;
+  }
