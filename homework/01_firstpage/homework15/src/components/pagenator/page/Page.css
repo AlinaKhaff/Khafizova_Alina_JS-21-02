@@ -1,0 +1,19 @@
+.page {
+    height: 30px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    cursor: pointer;
+  }
+  .page_theme_dark {
+    background-color: #c4c4c4;
+    color: #fff;
+  }
+  .page_active {
+    background-color:blue;
+  }
