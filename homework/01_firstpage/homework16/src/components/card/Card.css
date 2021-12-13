@@ -1,0 +1,34 @@
+.card {
+    min-width: 100%;
+    background-color: #e9e6e6;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+  }
+  .card_theme_dark {
+    background-color: #c4c4c4;
+  }
+  .card__user-image {
+    width: 72px;
+    height: 72px;
+  }
+  .card__user-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+   }
+  .card__info {
+    color: #6b7280;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .card__info_theme_dark {
+    color: #fff;
+  }
+  .card__user-id {
+    padding-bottom: 5px;
+  }
+  .card__user-name {
+    font-weight: 700;
+  }
