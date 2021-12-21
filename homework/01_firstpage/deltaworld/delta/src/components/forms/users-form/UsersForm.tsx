@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import CardUser from '../../cards/card-user/CardUser';
 import '../../flex-grid/FlexGrid.scss';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useTranslation } from 'react-i18next';
 import { IResponseUserPreview } from '../../../types/api/dumMyApi';
 import { useActions } from '../../../hooks/useActions';
 import { checkPictureAndGet, getUserFullName } from '../../../utils/common';
@@ -17,6 +18,7 @@ import PaginationWrapper from '../../PaginationWrapper/PaginationWrapper';
 const UsersForm = () => {
   const { users, isLoading, error } = useTypedSelector((state) => state.usersForm);
   const { loadUsersFormAC } = useActions();
+  const { t } = useTranslation();
 
   const themeCheckboxContext = useContext(ThemeCheckboxContext);
 
@@ -47,10 +49,13 @@ const UsersForm = () => {
               fullName={(
                 <Tooltip isDarkTheme={themeCheckboxContext.isDarkTheme} textInfo={item.id}>
                   <Link to={`/user/${item.id}`}>
-                    {getUserFullName(item.title, item.firstName, item.lastName)}
+                    {getUserFullName(
+                      t(`commons.userAppeal.${item.title}`),
+                      item.fullName
+                    )}
                   </Link>
                 </Tooltip>
-              )}
+                  )}
             />
           </div>
         ))}

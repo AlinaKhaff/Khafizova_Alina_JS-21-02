@@ -1,9 +1,10 @@
 /* eslint-disable linebreak-style */
 import React, { useContext } from 'react';
 import { Alert } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import CardPost from '../../cards/card-post/CardPost';
-import { checkPictureAndGet, getDateTimePublication, getUserFullName } from '../../../utils/common';
+import { checkPictureAndGet, getUserFullName } from '../../../utils/common';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import Preloader from '../../preloader/Preloader';
 import Tooltip from '../../tooltip/Tooltip';
@@ -12,7 +13,7 @@ import { ThemeCheckboxContext } from '../../../contexst/theme-checkbox/ThemeChec
 const PostForm = () => {
   const { post, isLoading, error } = useTypedSelector((state: { postForm: any; }) => state.postForm);
   const themeCheckboxContext = useContext(ThemeCheckboxContext);
-
+  const { t } = useTranslation();
   if (isLoading) {
     return <div style={{ height: 70 }}><Preloader isDarkTheme={themeCheckboxContext.isDarkTheme} /></div>;
   }
@@ -28,12 +29,15 @@ const PostForm = () => {
     >
       <CardPost.HeaderBig
         isDarkTheme={themeCheckboxContext.isDarkTheme}
-        userAvatarURL={post.owner.picture}
-        dateOfPublication={getDateTimePublication(post.publishDate)}
+        userAvatarURL={checkPictureAndGet(post.owner.picture)}
+        dateOfPublication={post.publishDate}
         userFullName={(
           <Tooltip textInfo={post.owner.id} isDarkTheme={themeCheckboxContext.isDarkTheme}>
             <Link to={`/user/${post.owner.id}`}>
-              {getUserFullName(post.owner.title, post.owner.firstName, post.owner.lastName)}
+              {getUserFullName(
+                t(`commons.userAppeal.${post.owner.title}`),
+                post.owner.fullName
+              )}
             </Link>
           </Tooltip>
         )}
@@ -42,5 +46,4 @@ const PostForm = () => {
     </CardPost.Big>
   );
 };
-
 export default PostForm;

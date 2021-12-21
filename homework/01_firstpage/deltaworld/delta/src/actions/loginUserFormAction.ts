@@ -1,8 +1,11 @@
 /* eslint-disable linebreak-style */
 import { Dispatch } from 'redux';
-import { fetchUserFullForm } from '../utils/fetchDumMyApi';
+import { AxiosResponse } from 'axios';
+import { fetchUserLoginForm } from '../utils/fetchLocalServer';
+// import { fetchUserFullForm } from '../utils/fetchDumMyApi';
 import { LoginUserFormAC, LoginUserFormACTypes } from '../types/redux/loginUserForm';
 import { EMPTY_STRING } from '../constants/common';
+import HttpStatuses from '../constants/httpStatuses';
 
 const loginUserFormAC = (id: string) => async (dispatch: Dispatch<LoginUserFormAC>) => {
   dispatch({
@@ -10,16 +13,20 @@ const loginUserFormAC = (id: string) => async (dispatch: Dispatch<LoginUserFormA
   });
 
   try {
-    const response = await fetchUserFullForm(id);
-    const loginUser = await response.json();
+    const response: AxiosResponse = await fetchUserLoginForm(id);
 
-    if (response.ok) {
+    if (response === undefined) {
+      throw new Error('503 – Service Unavailable');
+    }
+
+    if (response.status === HttpStatuses.OK) {
+      const loginUser = await response.data;
       dispatch({
         type: LoginUserFormACTypes.LOGIN_USER_FORM_SUCCESS,
-        payload: loginUser
+        payload: loginUser.data
       });
     } else {
-      throw new Error(`${response.status.toString()} – ${loginUser.error}`);
+      throw new Error(`${response.status.toString()} – ${response.data.error.message}`);
     }
   } catch (e) {
     dispatch({

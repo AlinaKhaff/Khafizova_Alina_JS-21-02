@@ -1,8 +1,11 @@
 /* eslint-disable linebreak-style */
 import { Dispatch } from 'redux';
+import { AxiosResponse } from 'axios';
 import { UsersFormAC, UsersFormACTypes } from '../types/redux/usersForm';
-import { fetchUsersForm } from '../utils/fetchDumMyApi';
+import { fetchUsersForm } from '../utils/fetchLocalServer';
+// import { fetchUsersForm } from '../utils/fetchDumMyApi';
 import { LOADING_EMULATION_TIME } from '../constants/common';
+import HttpStatuses from '../constants/httpStatuses';
 
 const loadUsersFormAC = (page: number, limit: number) => async (dispatch: Dispatch<UsersFormAC>) => {
   dispatch({
@@ -10,10 +13,10 @@ const loadUsersFormAC = (page: number, limit: number) => async (dispatch: Dispat
   });
 
   try {
-    const response = await fetchUsersForm(page, limit);
-    const users = await response.json();
+    const response: AxiosResponse = await fetchUsersForm(page, limit);
+    const users = await response.data;
 
-    if (response.ok) {
+    if (response.status === HttpStatuses.OK) {
       setTimeout(() => {
         dispatch({
           type: UsersFormACTypes.LOAD_USERS_FORM_SUCCESS,
@@ -23,7 +26,7 @@ const loadUsersFormAC = (page: number, limit: number) => async (dispatch: Dispat
         });
       }, LOADING_EMULATION_TIME);
     } else {
-      throw new Error(`${response.status.toString()} – ${users.error}`);
+      throw new Error(`${response.status.toString()} – ${users.error.message}`);
     }
   } catch (e) {
     dispatch({

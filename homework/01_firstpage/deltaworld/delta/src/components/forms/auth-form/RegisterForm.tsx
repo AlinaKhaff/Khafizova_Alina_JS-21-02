@@ -8,12 +8,14 @@ import {
 } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import { ICreateUser } from '../../../types/api/dumMyApi';
-import { getJSONStringifyForRegisterUser } from '../../../utils/common';
+import { useTranslation } from 'react-i18next';
+import { ICreateUser } from '../../../types/api/localServer';
+// import { ICreateUser } from '../../../types/api/dumMyApi';
 import { useActions } from '../../../hooks/useActions';
 import { COOKIE_LIFETIME, MAXIMUM_DATE } from '../../../constants/common';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { ThemeCheckboxContext } from '../../../contexst/theme-checkbox/ThemeCheckboxContext';
+import { getObjectSendDataUser } from '../../../utils/common';
 
 const RegisterForm = () => {
   const [form] = Form.useForm();
@@ -21,13 +23,12 @@ const RegisterForm = () => {
   const localeHistory = useHistory();
   const { sendUser, error, isLoading } = useTypedSelector((state) => state.sendUserForm);
   const { registerUserFormAction, loginUserSetValuesFormAC, clearSendDataUserFormAction } = useActions();
-
+  const { t } = useTranslation();
   const themeCheckboxContext = useContext(ThemeCheckboxContext);
 
   const handleFinishForm = () => {
     const formData: ICreateUser = form.getFieldsValue();
-    const formBody = getJSONStringifyForRegisterUser(formData);
-    registerUserFormAction(formBody);
+    registerUserFormAction(getObjectSendDataUser(formData));
   };
 
   useEffect(() => {
@@ -55,7 +56,7 @@ const RegisterForm = () => {
     <div className="user-auth">
       <div className="user-auth__body">
         <h2 className={`user-auth__header ${themeCheckboxContext.isDarkTheme ? 'user-auth__header_theme_dark' : ''}`}>
-          Регистрация
+          {t('authorization.registration.title')}
         </h2>
         <Form form={form} name="formRegisterUser" layout="vertical" onFinish={handleFinishForm}>
           <Form.Item

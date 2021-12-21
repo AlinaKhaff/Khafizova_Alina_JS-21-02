@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 export interface IResponseList<T> {
   data: Array<T>;
   total: number;
@@ -25,6 +24,7 @@ export interface IResponseUserFull extends IResponseUserPreview {
   gender: 'male' | 'female' | 'other' | '';
   email: string;
   dateOfBirth: string;
+  dateOfBirthOriginal: string;
   registerDate: string;
   phone: string;
 }
@@ -43,6 +43,13 @@ export interface IResponsePostPreview {
   owner: IResponseUserPreview;
 }
 
+export interface IResponsePostUser {
+  id: string;
+  text: string;
+  image: string;
+  publishDate: string;
+}
+
 export interface ICreateUser {
   title: 'ms' | 'mr' | '';
   firstName: string;
@@ -50,5 +57,6 @@ export interface ICreateUser {
   gender: 'male' | 'female' | 'other' | '';
   email: string;
   dateOfBirth: string;
+  registerDate: Date;
   phone: string;
 }

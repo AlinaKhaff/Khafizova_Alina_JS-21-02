@@ -1,8 +1,11 @@
 /* eslint-disable linebreak-style */
 import { Dispatch } from 'redux';
-import { fetchUserPostsForm } from '../utils/fetchDumMyApi';
+import { AxiosResponse } from 'axios';
+import { fetchUserPostsForm } from '../utils/fetchLocalServer';
+// import { fetchUserPostsForm } from '../utils/fetchDumMyApi';
 import { LOADING_EMULATION_TIME } from '../constants/common';
 import { UserPostsFormAC, UserPostsFormACTypes } from '../types/redux/userPostsForm';
+import HttpStatuses from '../constants/httpStatuses';
 
 const loadUserPostsFormAC = (
   userID: string, page: number, limit: number
@@ -12,10 +15,14 @@ const loadUserPostsFormAC = (
   });
 
   try {
-    const response = await fetchUserPostsForm(userID, page, limit);
-    const userPosts = await response.json();
+    const response: AxiosResponse = await fetchUserPostsForm(userID, page, limit);
 
-    if (response.ok) {
+    if (response === undefined) {
+      throw new Error('503 – Service Unavailable');
+    }
+
+    if (response.status === HttpStatuses.OK) {
+      const userPosts = await response.data;
       setTimeout(() => {
         dispatch({
           type: UserPostsFormACTypes.LOAD_USER_POSTS_FORM_SUCCESS,
@@ -25,7 +32,7 @@ const loadUserPostsFormAC = (
         });
       }, LOADING_EMULATION_TIME);
     } else {
-      throw new Error(`${response.status.toString()} – ${userPosts.error}`);
+      throw new Error(`${response.status.toString()} – ${response.data.error.message}`);
     }
   } catch (e) {
     dispatch({

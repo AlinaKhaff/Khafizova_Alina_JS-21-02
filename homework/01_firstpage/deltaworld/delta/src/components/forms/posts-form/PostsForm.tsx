@@ -2,12 +2,13 @@
 import React, { useContext, useEffect } from 'react';
 import '../../flex-grid/FlexGrid.scss';
 import { Alert } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import CardPost from '../../cards/card-post/CardPost';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { useActions } from '../../../hooks/useActions';
 import { IResponsePostPreview } from '../../../types/api/dumMyApi';
-import { checkPictureAndGet, getDateTimePublication, getUserFullName } from '../../../utils/common';
+import { checkPictureAndGet, getUserFullName } from '../../../utils/common';
 import Preloader from '../../preloader/Preloader';
 import { FORM_LIMIT_POSTS, ModalID } from '../../../constants/common';
 import Tooltip from '../../tooltip/Tooltip';
@@ -18,7 +19,7 @@ import PaginationWrapper from '../../PaginationWrapper/PaginationWrapper';
 const PostsForm = () => {
   const { posts, isLoading, error } = useTypedSelector((state: { postsForm: any; }) => state.postsForm);
   const { loadPostsFormAC, openModalsFormAC } = useActions();
-
+  const { t } = useTranslation();
   const themeCheckboxContext = useContext(ThemeCheckboxContext);
 
   useEffect(() => {
@@ -54,11 +55,14 @@ const PostsForm = () => {
               userFullName={(
                 <Tooltip isDarkTheme={themeCheckboxContext.isDarkTheme} textInfo={item.owner.id}>
                   <Link to={`/user/${item.owner.id}`}>
-                    {getUserFullName(item.owner.title, item.owner.firstName, item.owner.lastName)}
+                    {getUserFullName(
+                      t(`commons.userAppeal.${item.owner.title}`),
+                      item.owner.fullName
+                    )}
                   </Link>
                 </Tooltip>
                 )}
-              dateOfPublication={getDateTimePublication(item.publishDate)}
+              dateOfPublication={item.publishDate}
             >
               <div style={{ width: '100%', cursor: 'pointer' }} onClick={() => handleOpenModal(item.id)}>
                 <CardPost.Image imageURL={item.image} />
