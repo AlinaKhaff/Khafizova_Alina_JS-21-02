@@ -1,0 +1,21 @@
+{
+    "server": {
+      "port": 5000,
+      "host": "localhost",
+      "httpHeaders": [
+        {"option": "Access-Control-Allow-Origin", "value": "http://localhost:3000"},
+        {"option": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"},
+        {"option": "Access-Control-Allow-Headers", "value": "Origin, X-Requested-With, Content-Type, Accept"}
+      ]
+    },
+    "logger": {
+      "logDirectory": "./logs",
+      "fileNamePattern": "<DATE>.log",
+      "dateFormat": "DD.MM.YYYY"
+    },
+    "apiKeys": {
+      "dummyapi": "6190af67ee71f7cb9f28a4f6",
+      "imgbb": "d10e4cca65dbeea2ffc46a1a7137229a"
+    }
+  }
+  
